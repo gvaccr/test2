@@ -1,7 +1,7 @@
 export default {
     title: 'DRDO Simulator',
     description: 'Documentation for DRDO Simulator Development Project',
-    base: 'https://github.com/TechnoYantra/test-docs/',
+    outDir: '../public',
     themeConfig: {
         nav: [
           { text: 'Environment Model', link: '/env-model/overview' },
