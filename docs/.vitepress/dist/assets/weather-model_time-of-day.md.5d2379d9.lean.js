@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a as o}from"./app.b98abb9e.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"weather-model/time-of-day.md"}'),s={name:"weather-model/time-of-day.md"},r=o("p",null,"#Time of Day",-1),n=[r];function c(d,i,_,m,l,p){return a(),t("div",null,n)}const u=e(s,[["render",c]]);export{h as __pageData,u as default};
