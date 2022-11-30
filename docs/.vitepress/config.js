@@ -2,7 +2,9 @@ export default {
     title: 'DRDO Simulator',
     description: 'Documentation for DRDO Simulator Development Project',
     outDir: '../public',
+    base: '/test-docs',
     themeConfig: {
+        algolia: {},
         nav: [
           { text: 'Environment Model', link: '/env-model/overview' },
           { text: 'Weather Model', link: '/weather-model/weather-models' },

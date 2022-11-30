@@ -6,6 +6,7 @@ pages:
   script:
     - yarn install
     - yarn docs:build
+    - yarn docs:build
   artifacts:
     paths:
       - public
