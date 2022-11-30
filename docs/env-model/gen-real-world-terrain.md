@@ -2,6 +2,9 @@ Generating Real-World Terrain Models
 ====================================
 
 [This](https://www.youtube.com/watch?v=-ubDqXZtdJE) tutorial was referred to for this whole process. Watching it is highly recommended at least till the 30:00 minute mark.
+<figure>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-ubDqXZtdJE?start=1505" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</figure>
 
   
 
