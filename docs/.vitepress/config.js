@@ -2,6 +2,7 @@ export default {
     title: 'DRDO Simulator',
     description: 'Documentation for DRDO Simulator Development Project',
     outDir: '../public',
+    base: '/test-docs/',
     themeConfig: {
         nav: [
           { text: 'Environment Model', link: '/env-model/overview' },
