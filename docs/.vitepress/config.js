@@ -4,6 +4,7 @@ export default {
     outDir: '../public',
     base: '/test-docs/',
     themeConfig: {
+        algolia: {},
         nav: [
           { text: 'Environment Model', link: '/env-model/overview' },
           { text: 'Weather Model', link: '/weather-model/weather-models' },
