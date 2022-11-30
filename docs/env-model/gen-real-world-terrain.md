@@ -21,7 +21,7 @@ Similarly, the [Landsat](https://www.nasa.gov/mission_pages/landsat/overview/ind
 
   
 
-[https://earthexplorer.usgs.gov/](https://earthexplorer.usgs.gov/) can be used to download the data of the above-mentioned satellites in the form of images for any region of the world.
+[Earth Explorer](https://earthexplorer.usgs.gov/) can be used to download the data of the above-mentioned satellites in the form of images for any region of the world.
 
   
 
@@ -32,7 +32,7 @@ Post Processing with QGIS
 
   
 
-![](https://t37413662.p.clickup-attachments.com/t37413662/da899e6f-e10a-4813-ae0f-e47a24b2fa81/New%20Project.jpg)
+![Filtering](images/PostFiltering.jpg)
 
   
 
@@ -40,7 +40,7 @@ Once this is done for the other visual bands as well (red and blue), we can over
 
   
 
-![](https://t37413662.p.clickup-attachments.com/t37413662/311904cc-ac3a-4d74-bfc9-a9ae846916f8/Screenshot%20from%202022-09-26%2022-05-12.png)
+![Post Filtering](images/Filtering.jpg)
 
   
 
