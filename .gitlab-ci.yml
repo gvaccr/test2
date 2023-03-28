@@ -31,7 +31,7 @@ create_github_pr:
     - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
     - cd test
     - git checkout -b feature/new_branch
-    - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test_docs.git
+    - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test-docs.git
     - git fetch gitlab
     - git merge gitlab/main
     - git push origin feature/new_branch
