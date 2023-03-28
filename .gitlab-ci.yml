@@ -20,7 +20,7 @@ pages:
 
 create_github_pr:
   image: alpine/git
-  ENTRYPOINT ["git"]
+  entrypoint: ["git"]
   stage: create_pr
   variables:
     SHELL: /bin/sh
