@@ -19,25 +19,30 @@ pages:
     - main
 
 create_github_pr:
-  image: docker:latest
+  image: alpine/git:v2.26.2
   stage: create_pr
   variables:
-    DOCKER_DRIVER: overlay2
-  services:
-    - docker:dind
+    SHELL: /bin/sh
   only:
     - main
   script:
-    - docker run --rm --entrypoint /bin/sh alpine/git -c 'apk add --no-cache curl jq && \
-        git config --global user.name "gaurav" && \
-        git config --global user.email "gauravsvikhe@gmail.com" && \
-        git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git && \
-        cd test && \
-        git checkout -b feature/new_branch && \
-        git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test_docs.git && \
-        git fetch gitlab && \
-        git merge gitlab/main && \
-        git push origin feature/new_branch && \
-        PR_DATA=$(curl -s -X POST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/gvaccr/test/pulls -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"feature/new_branch\", \"base\": \"main\"}") && \
-        PR_URL=$(echo $PR_DATA | jq -r ".html_url") && \
-        echo "Pull Request created: $PR_URL"'
+    - set -x
+    - apk add --no-cache curl jq
+    - git config --global user.name "gaurav"
+    - git config --global user.email "gauravsvikhe@gmail.com"
+    - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
+    - cd test
+    - git checkout -b feature/new_branch
+    - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test_docs.git
+    - git fetch gitlab
+    - git merge gitlab/main
+    - git push origin feature/new_branch
+    - >
+      PR_DATA=$(curl -s -X POST \
+      -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" \
+      -H "Accept: application/vnd.github+json" \
+      https://api.github.com/repos/gvaccr/test/pulls \
+      -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"feature/new_branch\", \"base\": \"main\"}")
+    - PR_URL=$(echo $PR_DATA | jq -r '.html_url')
+    - >
+      echo "Pull Request created: $(echo $PR_DATA | jq -r '.html_url')"
