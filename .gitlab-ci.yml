@@ -1,5 +1,9 @@
 image: node:16
-
+stages:
+  - build
+  - test
+  - deploy
+  - create_pr
 pages:
   cache:
     paths:
