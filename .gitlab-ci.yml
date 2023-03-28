@@ -23,6 +23,7 @@ create_github_pr:
   stage: create_pr
   variables:
     SHELL: /bin/sh
+    GIT_SHELL: /bin/sh
   only:
     - main
   script:
