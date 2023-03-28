@@ -32,7 +32,7 @@ create_github_pr:
     - cd test
     - BRANCH_NAME="feature/new_branch_$(date +%Y%m%d_%H%M%S)"
     - git checkout -b $BRANCH_NAME
-    - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test_docs.git
+    - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test-docs.git
     - git fetch gitlab
     - git merge gitlab/main
     - git push origin $BRANCH_NAME
