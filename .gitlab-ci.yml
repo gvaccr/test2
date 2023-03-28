@@ -24,6 +24,7 @@ create_github_pr:
   only:
     - main
   script:
+    - set -x
     - apk add --no-cache curl jq
     - git config --global user.name "gaurav"
     - git config --global user.email "gauravsvikhe@gmail.com"
