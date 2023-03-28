@@ -19,7 +19,7 @@ pages:
     - main
 
 create_github_pr:
-  image: alpine/git:v2.26.2
+  image: alpine/git
   stage: create_pr
   variables:
     SHELL: /bin/sh
