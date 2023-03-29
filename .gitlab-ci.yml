@@ -25,7 +25,7 @@ create_github_pr:
     - main
   before_script:
     - apk add --no-cache git curl jq
-script:
+  script:
     - git config --global user.name 'gaurav'
     - git config --global user.email 'gauravsvikhe@gmail.com'
     - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
