@@ -40,3 +40,5 @@ create_github_pr:
       PR_DATA=$(curl -s -X POST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/gvaccr/test/pulls -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"$BRANCH_NAME\", \"base\": \"main\"}") &&
       PR_URL=$(echo $PR_DATA | jq -r '.html_url') &&
       echo "Pull Request created: $PR_URL"
+    - echo "PR_DATA: $PR_DATA"
+    - echo "Curl exit code: $?"
