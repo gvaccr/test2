@@ -28,8 +28,8 @@ create_github_pr:
   script:
     - git config --global user.name 'gaurav'
     - git config --global user.email 'gauravsvikhe@gmail.com'
-    - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
-    - cd test
+    - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test2.git
+    - cd test2
     - BRANCH_NAME="feature/new_branch_$(date +%Y%m%d_%H%M%S)"
     - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test-docs.git
     - git fetch gitlab main:$BRANCH_NAME
@@ -37,7 +37,7 @@ create_github_pr:
     - git merge gitlab/main
     - git push origin $BRANCH_NAME
     - >
-      PR_DATA=$(curl -s -X POST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/gvaccr/test/pulls -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"$BRANCH_NAME\", \"base\": \"main\"}") &&
+      PR_DATA=$(curl -s -X POST -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/gvaccr/test2/pulls -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"$BRANCH_NAME\", \"base\": \"main\"}") &&
       PR_URL=$(echo $PR_DATA | jq -r '.html_url') &&
       echo "Pull Request created: $PR_URL"
       echo "PR_DATA: $PR_DATA" &&
