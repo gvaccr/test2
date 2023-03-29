@@ -31,9 +31,9 @@ create_github_pr:
     - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
     - cd test
     - BRANCH_NAME="feature/new_branch_$(date +%Y%m%d_%H%M%S)"
-    - git checkout -b $BRANCH_NAME
     - git remote add gitlab https://gauravsvikhe:${GITLAB_ACCESS_TOKEN}@gitlab.com/gauravsvikhe/test-docs.git
-    - git fetch gitlab
+    - git fetch gitlab main:$BRANCH_NAME
+    - git checkout $BRANCH_NAME
     - git merge gitlab/main
     - git push origin $BRANCH_NAME
     - >
