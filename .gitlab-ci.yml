@@ -25,7 +25,7 @@ create_github_pr:
     - main
   before_script:
     - apk add --no-cache git curl jq
-  script:
+script:
     - git config --global user.name 'gaurav'
     - git config --global user.email 'gauravsvikhe@gmail.com'
     - git clone https://gvaccr:${GITHUB_ACCESS_TOKEN}@github.com/gvaccr/test.git
@@ -44,5 +44,6 @@ create_github_pr:
       -d "{\"title\": \"New PR from GitLab CI\", \"head\": \"$BRANCH_NAME\", \"base\": \"main\"}") \
       && PR_URL=$(echo $PR_DATA | jq -r '.html_url') \
       && echo "Pull Request created: $PR_URL"
-    - echo "PR_DATA: $PR_DATA"
-    - echo "Curl exit code: $?"
+    - 
+      - echo "PR_DATA: $PR_DATA"
+      - echo "Curl exit code: $?"
